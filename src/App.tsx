@@ -46,7 +46,7 @@ function App() {
           />
           <button
             className={"button"}
-            onClick={() => dispatch(incrementByAmount(incrementAmount || 0))}
+            onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}
           >
             Add
           </button>
