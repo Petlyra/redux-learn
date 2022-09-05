@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "./redux/counter-selector";
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  reset,
-} from "./redux/counter-actions";
+import { decrement, increment, incrementByAmount, reset } from "./redux/counter-actions";
 import { Dispatch } from "redux";
+import { RxJSOperators } from "./rxjs/RxJSOperators";
 
 function App() {
   const count = useSelector(selectCount);
@@ -64,6 +60,8 @@ function App() {
             Reset
           </button>
         </div>
+        {/*<RxJS />*/}
+        <RxJSOperators />
       </header>
     </div>
   );
