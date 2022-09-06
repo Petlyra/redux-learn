@@ -3,10 +3,10 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "./redux/counter-selector";
 import {
-  decrement,
-  increment,
-  incrementByAmount,
-  reset,
+  decrementAction,
+  incrementAction, incrementAsyncAction,
+  incrementByAmountAction,
+  reset
 } from "./redux/counter-actions";
 import { Dispatch } from "redux";
 
@@ -15,10 +15,6 @@ function App() {
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState<number>(2);
 
-  const incrementAsync = (amount: number, dispatch: Dispatch) => {
-    setTimeout(() => dispatch(incrementByAmount(amount)), 2000);
-  };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -26,7 +22,7 @@ function App() {
           <button
             className={"button"}
             aria-label="Decrement value"
-            onClick={() => dispatch(decrement())}
+            onClick={() => dispatch(decrementAction())}
           >
             -
           </button>
@@ -34,7 +30,7 @@ function App() {
           <button
             className={"button"}
             aria-label="Increment value"
-            onClick={() => dispatch(increment())}
+            onClick={() => dispatch(incrementAction())}
           >
             +
           </button>
@@ -46,13 +42,13 @@ function App() {
           />
           <button
             className={"button"}
-            onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}
+            onClick={() => dispatch(incrementByAmountAction(Number(incrementAmount) || 0))}
           >
             Add
           </button>
           <button
             className={"button"}
-            onClick={() => incrementAsync(Number(incrementAmount) || 0, dispatch)}
+            onClick={() => dispatch(incrementAsyncAction())}
           >
             Async
           </button>

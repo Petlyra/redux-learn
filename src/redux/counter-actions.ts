@@ -1,18 +1,22 @@
-import { DECREMENT, INCREMENT, INCREMENT_BY_AMOUNT, RESET } from "./actions";
+import { DECREMENT, INCREMENT, INCREMENT_ASYNC, INCREMENT_BY_AMOUNT, RESET } from "./actions";
 
-export const increment = () => ({
-  type: INCREMENT,
+export const incrementAction = () => ({
+  type: INCREMENT
 });
 
-export const decrement = () => ({
-  type: DECREMENT,
+export const decrementAction = () => ({
+  type: DECREMENT
 });
 
-export const incrementByAmount = (amount: number) => ({
+export const incrementByAmountAction = (amount: number) => ({
   type: INCREMENT_BY_AMOUNT,
-  payload: amount,
+  payload: amount
+});
+
+export const incrementAsyncAction = () => ({
+  type: INCREMENT_ASYNC,
 });
 
 export const reset = () => ({
-  type: RESET,
+  type: RESET
 });
