@@ -13,10 +13,13 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig = {
   key: "root",
   storage,
-  stateReconciler: hardSet
+  stateReconciler: hardSet,
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer as Reducer<any, AnyAction>);
+const persistedReducer = persistReducer(
+  persistConfig,
+  rootReducer as Reducer<any, AnyAction>
+);
 
 export const store = createStore(
   persistedReducer,

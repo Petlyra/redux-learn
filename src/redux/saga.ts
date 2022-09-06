@@ -3,7 +3,7 @@ import { all, put, takeEvery } from "redux-saga/effects";
 import { INCREMENT_ASYNC } from "./actions";
 import { AnyAction } from "redux";
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 export function* incrementAsync(action: AnyAction) {
   yield delay(2000);
@@ -15,7 +15,5 @@ export function* watchIncrementAsync() {
 }
 
 export default function* rootSaga() {
-  yield all([
-    watchIncrementAsync()
-  ]);
+  yield all([watchIncrementAsync()]);
 }

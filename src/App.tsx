@@ -7,7 +7,7 @@ import {
   incrementAction,
   incrementAsyncAction,
   incrementByAmountAction,
-  reset
+  reset,
 } from "./redux/counter-actions";
 
 function App() {
@@ -42,13 +42,17 @@ function App() {
           />
           <button
             className={"button"}
-            onClick={() => dispatch(incrementByAmountAction(Number(incrementAmount) || 0))}
+            onClick={() =>
+              dispatch(incrementByAmountAction(Number(incrementAmount) || 0))
+            }
           >
             Add
           </button>
           <button
             className={"button"}
-            onClick={() => dispatch(incrementAsyncAction(Number(incrementAmount) || 0))}
+            onClick={() =>
+              dispatch(incrementAsyncAction(Number(incrementAmount) || 0))
+            }
           >
             Async
           </button>
