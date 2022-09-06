@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import { Content } from "./components/Content";
+import { Counter } from "./components/Counter";
 import { Todos } from "./components/Todos";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Content />
+        <Counter />
         <Todos />
       </header>
     </div>

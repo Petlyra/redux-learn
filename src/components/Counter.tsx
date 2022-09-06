@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "../redux/selector/counter-selector";
 import ActionButton from "./ActionButton";
 
-export const Content = () => {
+export const Counter = () => {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState<number>(2);
