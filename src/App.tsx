@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "./redux/counter-selector";
 import {
   decrementAction,
-  incrementAction, incrementAsyncAction,
+  incrementAction,
+  incrementAsyncAction,
   incrementByAmountAction,
   reset
 } from "./redux/counter-actions";
-import { Dispatch } from "redux";
 
 function App() {
   const count = useSelector(selectCount);
