@@ -25,7 +25,7 @@ export const Todos = () => {
         />
       </div>
       <div className={"todos-box"}>
-        {todos && todos.map((todo) => <TodoItem {...todo} />)}
+        {todos && todos.map((todo) => <TodoItem key={todo.id} {...todo} />)}
       </div>
     </div>
   );
