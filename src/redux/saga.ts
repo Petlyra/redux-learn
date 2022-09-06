@@ -1,6 +1,6 @@
-import { incrementByAmountAction } from "./counter-actions";
+import { incrementByAmountAction } from "./actions/counter-actions";
 import { all, put, takeEvery } from "redux-saga/effects";
-import { INCREMENT_ASYNC } from "./actions";
+import { INCREMENT_ASYNC } from "./actions/actions";
 import { AnyAction } from "redux";
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));

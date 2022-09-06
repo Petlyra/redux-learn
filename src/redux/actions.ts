@@ -1,5 +1,0 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
-export const INCREMENT_BY_AMOUNT = "INCREMENT_BY_AMOUNT";
-export const INCREMENT_ASYNC = "INCREMENT_ASYNC";
-export const RESET = "RESET";

@@ -6,9 +6,9 @@ import {
   incrementAsyncAction,
   incrementByAmountAction,
   reset,
-} from "../redux/counter-actions";
+} from "../redux/actions/counter-actions";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCount } from "../redux/counter-selector";
+import { selectCount } from "../redux/selector/counter-selector";
 import ActionButton from "./ActionButton";
 
 export const Content = () => {

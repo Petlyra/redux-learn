@@ -3,7 +3,7 @@ import {
   INCREMENT,
   INCREMENT_ASYNC,
   INCREMENT_BY_AMOUNT,
-  RESET,
+  RESET_COUNTER,
 } from "./actions";
 
 export const incrementAction = () => ({
@@ -25,5 +25,5 @@ export const incrementAsyncAction = (amount: number) => ({
 });
 
 export const reset = () => ({
-  type: RESET,
+  type: RESET_COUNTER,
 });

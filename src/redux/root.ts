@@ -1,14 +1,17 @@
 import { AnyAction, applyMiddleware, createStore } from "redux";
-import rootReducer from "./root-reducer";
+import rootReducer from "./reducers/root-reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./saga";
 import storage from "redux-persist/lib/storage";
-import { persistReducer, persistStore } from "redux-persist";
+import { persistReducer } from "redux-persist";
 import hardSet from "redux-persist/lib/stateReconciler/hardSet";
 import { Reducer } from "react";
+import { createEpicMiddleware } from "redux-observable";
+import rootEpic from "./epic/root-epic";
 
 const sagaMiddleware = createSagaMiddleware();
+const epicMiddleware = createEpicMiddleware();
 
 const persistConfig = {
   key: "root",
@@ -21,11 +24,14 @@ const persistedReducer = persistReducer(
   rootReducer as Reducer<any, AnyAction>
 );
 
-export const store = createStore(
-  persistedReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
-);
+export const configureStore = () => {
+  const store = createStore(
+    persistedReducer,
+    composeWithDevTools(applyMiddleware(sagaMiddleware, epicMiddleware))
+  );
 
-export const persistor = persistStore(store);
+  sagaMiddleware.run(rootSaga);
+  epicMiddleware.run(rootEpic);
 
-sagaMiddleware.run(rootSaga);
+  return store;
+};

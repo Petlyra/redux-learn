@@ -1,9 +1,11 @@
 import { AnyAction } from "redux";
-import { DECREMENT, INCREMENT, INCREMENT_BY_AMOUNT, RESET } from "./actions";
-
-export interface CounterState {
-  value: number;
-}
+import {
+  DECREMENT,
+  INCREMENT,
+  INCREMENT_BY_AMOUNT,
+  RESET_COUNTER,
+} from "../actions/actions";
+import { CounterState } from "../../types/counter-type";
 
 const initialState: CounterState = {
   value: 0,
@@ -29,7 +31,7 @@ export const counterReducer = (
         ...state,
         value: state.value + action.payload,
       };
-    case RESET:
+    case RESET_COUNTER:
       return {
         ...initialState,
       };
