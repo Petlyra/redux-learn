@@ -48,7 +48,7 @@ function App() {
           </button>
           <button
             className={"button"}
-            onClick={() => dispatch(incrementAsyncAction())}
+            onClick={() => dispatch(incrementAsyncAction(Number(incrementAmount) || 0))}
           >
             Async
           </button>

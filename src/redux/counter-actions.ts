@@ -13,8 +13,9 @@ export const incrementByAmountAction = (amount: number) => ({
   payload: amount
 });
 
-export const incrementAsyncAction = () => ({
+export const incrementAsyncAction = (amount: number) => ({
   type: INCREMENT_ASYNC,
+  payload: amount
 });
 
 export const reset = () => ({
