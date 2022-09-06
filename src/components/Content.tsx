@@ -39,7 +39,11 @@ export const Content = () => {
           dispatch(incrementAsyncAction(Number(incrementAmount) || 0))
         }
       />
-      <ActionButton label={"Reset"} onClick={() => dispatch(reset())} />
+      <ActionButton
+        fullWidth
+        label={"Reset"}
+        onClick={() => dispatch(reset())}
+      />
     </div>
   );
 };

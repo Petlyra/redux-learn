@@ -8,16 +8,18 @@
   display: flex;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex-direction: column;
 }
 
 .box {
-  height: 80px;
+  height: 100px;
   width: 270px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .button {

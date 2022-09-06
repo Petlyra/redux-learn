@@ -4,11 +4,12 @@ import "../App.css";
 type ActionButtonProps = {
   label: string;
   onClick: any;
+  fullWidth?: boolean;
 };
 
 const ActionButton = (props: ActionButtonProps) => {
-  const { label, onClick } = props;
-  const buttonWidth = label === "Reset" ? "100%" : "";
+  const { label, onClick, fullWidth } = props;
+  const buttonWidth = fullWidth ? "100%" : "";
   return (
     <button
       className={"button"}

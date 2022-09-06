@@ -1,0 +1,7 @@
+.todos-box {
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
