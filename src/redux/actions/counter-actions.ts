@@ -24,6 +24,6 @@ export const incrementAsyncAction = (amount: number) => ({
   payload: amount,
 });
 
-export const reset = () => ({
+export const resetCounter = () => ({
   type: RESET_COUNTER,
 });

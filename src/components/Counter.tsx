@@ -5,7 +5,7 @@ import {
   incrementAction,
   incrementAsyncAction,
   incrementByAmountAction,
-  reset,
+  resetCounter,
 } from "../redux/actions/counter-actions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "../redux/selector/counter-selector";
@@ -42,7 +42,7 @@ export const Counter = () => {
       <ActionButton
         fullWidth
         label={"Reset"}
-        onClick={() => dispatch(reset())}
+        onClick={() => dispatch(resetCounter())}
       />
     </div>
   );
