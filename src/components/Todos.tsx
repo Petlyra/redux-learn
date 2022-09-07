@@ -1,5 +1,5 @@
 import React from "react";
-import "./Todos.css";
+import "../css/Todos.css";
 import ActionButton from "./ActionButton";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodos, resetTodos } from "../redux/actions/todos-actions";
